@@ -1,3 +1,5 @@
+package puzziegame.src;
+
 import javax.swing.*;
 
 public class Test {
