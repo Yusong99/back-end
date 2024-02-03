@@ -11,6 +11,9 @@ public class MyInetAddressDemoi
     * getHostAddress 返回文本显示中的IP地址字符串*/
     public static void main(String[] args) throws UnknownHostException {
         InetAddress address = InetAddress.getByName("172.0.0.1");
-        System.out.println(address);
+        InetAddress address2 = InetAddress.getByName("xysPC");
+        System.out.println(address2);
+        System.out.println(address2.getHostAddress());
+        System.out.println(address2.getHostName());
     }
 }
