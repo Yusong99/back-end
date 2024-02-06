@@ -12,6 +12,8 @@ public class ExceptionDemo1 {
         }catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("索引越界了");
         }
+        // 如果要捕获的异常存在父子关系，父类要写在下面
         System.out.println("仍在执行");
+        //JDK 7之后可以用|来表示多种异常同一种处理方式
     }
 }
