@@ -12,5 +12,6 @@ public class ExceptionDemo1 {
         }catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("索引越界了");
         }
+        System.out.println("仍在执行");
     }
 }
