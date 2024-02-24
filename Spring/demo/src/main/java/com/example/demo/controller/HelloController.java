@@ -4,11 +4,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.pojo.User;
 
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 
 /**
  * HelloController
@@ -43,4 +46,29 @@ public class HelloController {
         System.out.println(user);
         return "OK";
     }
+
+    @RequestMapping("/arrayParam")
+    public String requestMethodName(String[] name) {
+        System.out.println(Arrays.toString(name));
+        return Arrays.toString(name);
+    }
+
+    @RequestMapping("/listParam")
+    public String lsitParam(@RequestParam List<String> list) {
+        System.out.println(list);
+        return "OK";
+    }
+
+    @RequestMapping("/dateParam")
+    public String requestMethodName(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime upDateTime) {
+        System.out.println(upDateTime);
+        return "OK";
+    }
+
+    @RequestMapping("/jsonParam")
+    public String jsonParam(@RequestBody User user) {
+        System.out.println(user);
+        return "OK";
+    }
+
 }

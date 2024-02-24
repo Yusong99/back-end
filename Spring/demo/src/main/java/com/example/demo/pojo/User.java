@@ -4,6 +4,15 @@ public class User {
     private String name;
     private Integer age;
     private Address address;
+    private Hobby hobby;
+
+    public Hobby getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(Hobby hobby) {
+        this.hobby = hobby;
+    }
 
     public Address getAddress() {
         return address;
@@ -31,8 +40,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User name=" + name + "age= " + age
-        + "address=" + getAddress();
+        return "User [name=" + name + ", age=" + age + ", address=" + address + ", hobby=" + hobby + "]";
     }
 
 }
