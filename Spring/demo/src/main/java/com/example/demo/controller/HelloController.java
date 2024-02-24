@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -71,4 +72,11 @@ public class HelloController {
         return "OK";
     }
 
+    // 使用Integer是因为要允许存在参数为空或者不确定路径参数是否总是有效
+    // 使用封装好的包装类就会允许参数为空值
+    @RequestMapping("/pathParam/{id}/{name}")
+    public String jsonParam(@PathVariable Integer id, @PathVariable String name) {
+        System.out.println(id + ":" + name);
+        return "OK";
+    }
 }
