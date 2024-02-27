@@ -2,13 +2,18 @@ package com.example.demo.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.example.demo.dao.EmpDao;
 import com.example.demo.dao.impl.EmpDaoA;
 import com.example.demo.pojo.Emp;
 import com.example.demo.service.EmpService;
 
+@Component
 public class EmpServiceA implements EmpService {
-    private EmpDao empDao = new EmpDaoA();
+    @Autowired
+    private EmpDao empDao;
 
     @Override
     public List<Emp> listEmp() {

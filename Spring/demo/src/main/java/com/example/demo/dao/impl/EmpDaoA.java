@@ -2,6 +2,8 @@ package com.example.demo.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.dao.EmpDao;
 import com.example.demo.pojo.Emp;
 import com.example.demo.utils.XmlParserUtils;
@@ -9,6 +11,7 @@ import com.example.demo.utils.XmlParserUtils;
 /**
  * EmpDaoA
  */
+@Component
 public class EmpDaoA implements EmpDao {
 
     @Override
