@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.EmpDao;
 import com.example.demo.dao.impl.EmpDaoA;
 import com.example.demo.pojo.Emp;
 import com.example.demo.service.EmpService;
 
-@Component
+@Service
 public class EmpServiceA implements EmpService {
     @Autowired
     private EmpDao empDao;
