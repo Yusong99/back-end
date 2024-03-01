@@ -3,7 +3,6 @@ package com.example.demo.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +11,8 @@ import com.example.demo.dao.impl.EmpDaoA;
 import com.example.demo.pojo.Emp;
 import com.example.demo.service.EmpService;
 
-// @Primary // 可以在同名的情况下指定
 @Service
-public class EmpServiceA implements EmpService {
+public class EmpServiceB implements EmpService {
     @Autowired
     private EmpDao empDao;
 
@@ -26,9 +24,9 @@ public class EmpServiceA implements EmpService {
         eList.stream().forEach(emp -> {
             String gender = emp.getGender();
             if ("1".equals(gender)) {
-                emp.setGender("男");
+                emp.setGender("男士");
             } else if ("2".equals(gender)) {
-                emp.setGender("女");
+                emp.setGender("女士");
             }
             String job = emp.getJob();
             if ("1".equals(job)) {

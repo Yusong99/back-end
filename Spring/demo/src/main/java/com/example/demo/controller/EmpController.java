@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,8 @@ import com.example.demo.service.EmpService;
 import com.example.demo.service.impl.EmpServiceA;
 import com.example.demo.utils.XmlParserUtils;
 import com.itheima.pojo.Result;
+
+import jakarta.annotation.Resource;
 
 @RestController
 public class EmpController {
@@ -43,7 +46,9 @@ public class EmpController {
     // // 响应数据
     // return Result.success(eList);
     // }
-    @Autowired
+    // @Qualifier("empServiceB") // 用于在不止一个Service的情况下指定，首字母小写
+    // @Autowired
+    @Resource(name = "empServiceA")
     private EmpService empService;
 
     @RequestMapping("/listEmp")
