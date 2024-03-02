@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * HelloController
@@ -30,6 +31,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 // springboot方法
 @RestController
 public class HelloController {
+    @RequestMapping("/xys")
+    public String requestMethodName() {
+        return "xys";
+    }
+
     @RequestMapping("/hello")
     // 对于简单参数来说get和post都一样
     public String requestMethodName(@RequestParam(name = "name1", required = false) String name, Integer age) {
